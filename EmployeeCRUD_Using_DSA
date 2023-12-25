@@ -9,3 +9,68 @@ public class Node {
         this.next=null; //address of other node
     }
 }
+
+package DS.CRUD_EmpDSA;
+
+public class Crud_Employee {
+    int ID;
+    String name;
+    String gender;
+    Double Salary;
+    static int getid;
+    
+    public Crud_Employee(String name,String gender,Double salary)
+    {
+        super();
+        ID=++getid;
+        this.name=name;
+        this.Salary=salary;
+        this.gender=gender;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int iD) {
+        ID = iD;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Double getSalary() {
+        return Salary;
+    }
+
+    public void setSalary(Double salary) {
+        Salary = salary;
+    }
+
+    public static int getGetid() {
+        return getid;
+    }
+
+    public static void setGetid(int getid) {
+        Crud_Employee.getid = getid;
+    }
+
+    @Override
+    public String toString() {
+        return "Crud_Employee [ID=" + ID + ", name=" + name + ", gender=" + gender + ", Salary=" + Salary + "]";
+    }
+}
+
