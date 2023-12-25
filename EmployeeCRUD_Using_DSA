@@ -1,0 +1,11 @@
+package DS.CRUD_EmpDSA;
+
+public class Node {
+    Crud_Employee data;
+    Node next;//self reference
+
+    public Node(Crud_Employee data){
+        this.data=data;
+        this.next=null; //address of other node
+    }
+}
