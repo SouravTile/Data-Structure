@@ -74,3 +74,196 @@ public class Crud_Employee {
     }
 }
 
+package DS.CRUD_EmpDSA;
+
+import java.util.Scanner;
+
+public class CRUD {
+    Node root;
+
+    void createList()
+    {
+        root=null; //root is never created but assigned as per need 
+                    // first node called root node
+    }
+
+    void Register(Crud_Employee e){
+        Node n=new Node(e);
+        if(root==null)
+            root=n;
+        else{
+            Node t=root;
+            while(t!=null){
+                t=t.next;
+            }
+            t.next=t;
+        }
+        System.out.println("Registered Employee"+e.getName());
+    }
+
+    void search(int id)
+    {
+        if(root==null)
+            System.out.println("empty list");
+        else 
+        {
+            Node t=root;
+            while(t!=null && id!=t.data.ID){
+                t=t.next;       
+            }
+            if(t==null)
+                System.out.println(id+"not found");
+            else   
+                System.out.println(id+"found in list\n"+t.data);
+        }
+    }
+    
+    void delete(int id){
+        if(root==null)
+            System.out.println("empty list");
+        else{
+            Node t=root;
+            Node t2=root;
+            while(t!=null && id!=t.data.ID){
+                t2=t;
+                t=t.next;
+            }
+            if(t==null)
+                System.out.println("empty list");
+            else
+            {
+                System.out.println(id+"found in list");
+                if(t==root)
+                    root=root.next;
+                else if(t.next==null)
+                    t2.next=t.next;
+                System.out.println(t.data.name+"deleted");
+            }
+        }
+    }
+
+    void print_list(){
+        if(root==null)
+            System.out.println("empty List");
+        else{
+            Node t=root;
+            while(t!=null){
+                System.out.println(t.data);
+                t=t.next;
+            }
+        }
+    }
+
+    void update(int id ,String reg,String n){
+        if(root==null)
+            System.out.println("empty list");
+        else
+        {
+            Node t=root;
+            while(t!=null && id!=t.data.ID){
+                t=t.next;
+            }
+            if(t==null)
+                System.out.println(id+"not found");
+            else{
+                if(reg=="name")
+                    t.data.setName(n);
+                else if(reg=="gender")
+                    t.data.setGender(n);
+                else 
+                    t.data.setSalary(Double.parseDouble(n));
+                System.out.println(+t.data.ID+" updated");
+            }
+        }   
+    }
+
+        public static void main(String [] args){
+            Scanner sc=new Scanner(System.in);
+
+            CRUD emp=new CRUD();
+            int ch;
+            do{
+                System.out.println("\n1:Register new employee\n2:Search by id\n3:Delete by id\n4:Update Details\n5:Print employee list\nENTER 0 to exit");
+                ch=sc.nextInt();
+
+                switch(ch){
+                    case 1:
+                    {
+                        System.out.println("Enter name,gender,salary of employee");
+                        String name=sc.next();
+						String gender=sc.next();
+						double salary=sc.nextDouble();
+						Crud_Employee e=new Crud_Employee(name,gender,salary);
+						emp.Register(e);
+						break;
+                    }
+
+                    case 2: 
+                        System.out.println("enter a id to search");
+						int id=sc.nextInt();
+						emp.search(id);
+					    break;
+
+                    case 3:
+                        System.out.println("enter id to delete");
+                        id=sc.nextInt();
+                        emp.delete(id);
+                        break;
+                    case 4: 
+                    {	
+                        char c;
+                        do 
+                        {
+                        System.out.println("\t(n)Update name\n\t(g)update gender\n\t(s)update salary\n\tEnter e  to exit ");
+                         c=sc.next().charAt(0);
+                            switch(c)
+                            {
+                            case 'n':
+                                {
+                                    System.out.println("enter id and name to update");
+                                    id=sc.nextInt();
+                                    String name=sc.next();
+                                    emp.update(id,"name",name);
+                                    break;
+                                }
+                            case 'g':
+                            {
+                                System.out.println("enter id and gender to update");
+                                id=sc.nextInt();
+                                String g=sc.next();
+                                emp.update(id,"gender",g);
+                                break;
+                            }
+                            case 's':
+                            {
+                                System.out.println("enter id and new salary to update");
+                                id=sc.nextInt();
+                                Double s=sc.nextDouble();
+                                emp.update(id,"salary",s.toString());
+                                break;
+                            }
+                            case 'e':
+                                System.out.println("EXIT");
+                                break;
+                            default:
+                                System.out.println("Enter right choice");
+                            }
+                       }
+                        while(c!='e');
+                   }	
+                    break;
+
+                    case 5:
+                            emp.print_list();
+                        break;
+                    
+                    case 0:
+                        System.out.println("EXIT");
+                        break;
+                    default:
+                        System.out.println("enter right choice");		
+                }
+            }
+            while(ch!=0);
+         }
+    }
