@@ -1,5 +1,4 @@
 package DS.CRUD_EmpDSA;
-
 public class Node {
     Crud_Employee data;
     Node next;//self reference
