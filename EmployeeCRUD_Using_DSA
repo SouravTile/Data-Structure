@@ -46,27 +46,23 @@ public class Crud_Employee {
     public Double getSalary() {
         return Salary;
     }
-
     public void setSalary(Double salary) {
         Salary = salary;
     }
-
     public static int getGetid() {
         return getid;
     }
-
     public static void setGetid(int getid) {
         Crud_Employee.getid = getid;
     }
-
     @Override
     public String toString() {
         return "Crud_Employee [ID=" + ID + ", name=" + name + ", gender=" + gender + ", Salary=" + Salary + "]";
     }
 }
 
-package DS.CRUD_EmpDSA;
 
+package DS.CRUD_EmpDSA;
 import java.util.Scanner;
 
 public class CRUD {
