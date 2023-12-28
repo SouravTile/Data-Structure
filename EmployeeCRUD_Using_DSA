@@ -17,7 +17,6 @@ public class Crud_Employee {
     String gender;
     Double Salary;
     static int getid;
-    
     public Crud_Employee(String name,String gender,Double salary)
     {
         super();
