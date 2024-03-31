@@ -1,6 +1,5 @@
 public class Common_in_array_one_loop {
     public static void main(String [] args){
-
         int[] arr1 = {2,3,5,8,9,7};
         int[] arr2 = {2,5,9,6,7};
         findcommon(arr1, arr2);
