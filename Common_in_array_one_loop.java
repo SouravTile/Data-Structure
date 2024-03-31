@@ -20,6 +20,5 @@ public class Common_in_array_one_loop {
                     i++;
             }
         }
-    }
-    
+    }   
 } 
