@@ -10,6 +10,5 @@ public class DecimalToBinary {
             decimal = decimal / 2;
         }
         System.out.println("The binary representation is: " + binary);
-        
     }
 }
