@@ -8,7 +8,6 @@ public class ArrayBubbleSort {
             System.out.println("Enter num ");
             arr[i]=sc.nextInt();
         }
-
         for(int i=0;i<arr.length;i++)
         {
             for(int j=1;j<arr.length-1;j++)
