@@ -18,6 +18,7 @@ public class ArrayBubbleSort {
                     num=arr[i];
                     arr[i]=arr[j];
                     arr[j]=num;
+                    
                 }
             }
         }
