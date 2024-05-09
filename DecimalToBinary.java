@@ -3,7 +3,6 @@ public class DecimalToBinary {
     {
         int decimal = 10; // replace with your decimal number
         String binary = "";
-
         while (decimal > 0) { 
             binary = (decimal % 2) + binary;
             System.out.println("number="+binary);
