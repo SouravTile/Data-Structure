@@ -8,7 +8,6 @@ public class Armstrong
         System.out.println("enter 3 digit no: ");
         num=sc.nextInt();
         temp=num;
-        
         while(num>0)
         {
             r=num%10;
