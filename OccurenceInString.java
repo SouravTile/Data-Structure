@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class OccurenceInString{
 	public static int Occurence(String s, String s1) {
 		int count = 0;
