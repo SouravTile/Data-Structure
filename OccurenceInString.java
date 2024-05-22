@@ -29,3 +29,4 @@ public class OccurenceInString{
 		System.out.println(Occurence(s, s1));
 	}
 }
+
