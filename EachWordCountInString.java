@@ -1,6 +1,5 @@
 import java.util.HashMap;
 public class EachWordCountInString {
-
     public static void main(String[] args) 
     {
         String s = "hello world";
